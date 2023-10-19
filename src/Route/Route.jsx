@@ -12,8 +12,8 @@ import AddProducts from "../Component/AddProducts/AddProducts";
 import Brands from "../Component/Brands/Brands";
 import Contact from "../Component/Contact/Contact";
 import MyCart from "../Component/MyCart/MyCart";
-
-
+import Apple from "../ProductBrands/Apple";
+import UpdateProduct from "../Component/UpdateProduct/UpdateProduct";
 
 
 const router = createBrowserRouter([
@@ -56,7 +56,17 @@ const router = createBrowserRouter([
                 path: '/myCart',
                 element: <MyCart></MyCart>
             },
-            
+            {
+                path: '/appleData',
+                element:<Apple></Apple>,
+                loader: () => fetch('http://localhost:5000/addProducts')
+            },
+            {
+                path:"updateProduct/:id",
+                element:<UpdateProduct></UpdateProduct>,
+                loader: ({params}) => fetch(`http://localhost:5000/addProducts/${params.id}`)
+              },
+        
         ]
     }
 ]);
