@@ -5,7 +5,7 @@ const Banner = () => {
         <div>
         <div
           className="hero h-[75vh]"
-          style={{ backgroundImage: "url(https://i.ibb.co/3zTkXh6/Technology-and-Electronics.png)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/gzQmg9Y/Technology-and-Electronics.png)" }}
         >
           <div className="hero-overlay bg-opacity-80"></div>
           <div className="hero-content text-center text-neutral-content">

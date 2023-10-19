@@ -73,11 +73,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+      {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          {/* <img src={userDefaultPic} /> */}
+          <img src={userDefaultPic} />
         </div>
-      </label>
+      </label> */}
 
       {/* {
         user ? 

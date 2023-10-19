@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 
 const AddProducts = () => {
+
+    const [selectedRating, setSelectedRating] = useState(3);
     
     const handleAddProduct = event => {
         event.preventDefault();
@@ -13,10 +16,9 @@ const AddProducts = () => {
         const Price = form.Price.value;
         const Type = form.Type.value;
         const ShortDescription = form.ShortDescription.value;
-        const Rating = form.Rating.value;
         const photo = form.photo.value;
 
-        const newProduct = { name, BrandName, Price, Type, ShortDescription, Rating, photo }
+        const newProduct = { name, BrandName, Price, Type, ShortDescription, rating: selectedRating, photo }
 
         console.log(newProduct);
 
@@ -103,8 +105,14 @@ const AddProducts = () => {
                         <span className="label-text">Rating</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="Rating" placeholder="Rating" className="input input-bordered w-full" />
-                    </label>
+              <div className="rating input input-bordered w-full">
+                <input type="radio" name="rating-1" className="mask mask-star mt-3" value="1" checked={selectedRating === 1} onChange={() => setSelectedRating(1)} />
+                <input type="radio" name="rating-1" className="mask mask-star mt-3" value="2" checked={selectedRating === 2} onChange={() => setSelectedRating(2)} />
+                <input type="radio" name="rating-1" className="mask mask-star mt-3" value="3" checked={selectedRating === 3} onChange={() => setSelectedRating(3)} />
+                <input type="radio" name="rating-1" className="mask mask-star mt-3" value="4" checked={selectedRating === 4} onChange={() => setSelectedRating(4)} />
+                <input type="radio" name="rating-1" className="mask mask-star mt-3" value="5" checked={selectedRating === 5} onChange={() => setSelectedRating(5)} />
+              </div>
+            </label>
                 </div>
             </div>
             {/* form Photo url row */}
