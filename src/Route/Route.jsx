@@ -15,6 +15,7 @@ import MyCart from "../Component/MyCart/MyCart";
 
 import UpdateProduct from "../Component/UpdateProduct/UpdateProduct";
 import Products from "../ProductBrands/Products";
+import ViewDetails from "../ViewDetails/ViewDetails";
 
 
 
@@ -69,6 +70,11 @@ const router = createBrowserRouter([
                 element:<UpdateProduct></UpdateProduct>,
                 loader: ({params}) => fetch(`http://localhost:5000/addProducts/${params.id}`)
               },
+              {
+                path: '/ViewDetails/:id',
+                element: <ViewDetails></ViewDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/Products/${params.id}`)
+              }  
         
         ]
     }

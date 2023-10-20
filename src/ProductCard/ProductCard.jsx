@@ -22,7 +22,11 @@ const ProductCard = ({product}) => {
           <h2>Price : {Price}</h2>
           <h2>Rating : {rating}</h2>
           <p className="text-lg">ShortDescription: {ShortDescription}</p>
+           
+          <Link to={`/ViewDetails/${_id}`}>
           <button className="btn btn btn-accent">View Details</button>
+          </Link>
+          
           
           <Link to={`/updateProduct/${_id}`}>
             <button className="btn btn btn-accent">Update Product</button>
