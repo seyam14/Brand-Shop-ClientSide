@@ -16,6 +16,7 @@ import Apple from "../ProductBrands/Apple";
 import UpdateProduct from "../Component/UpdateProduct/UpdateProduct";
 
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
             {
                 path: '/addproducts',
                 element: <AddProducts></AddProducts>
+                
             },
             {
                 path: '/Brands',

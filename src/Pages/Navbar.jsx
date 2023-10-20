@@ -79,9 +79,8 @@ const Navbar = () => {
             </button>
             <div className="gap-1 m-2">
               <p>{user?.displayName}</p>
-              <p>{user?.email}</p>
             </div>
-            <div >
+            <div className="gap-1 m-2" >
               <img className="w-10 rounded-full" src={user.photoURL} alt="" />
             </div>
           </>

@@ -11,16 +11,17 @@ const Register = () => {
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
+        const displayName = form.displayName.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        console.log(displayName,email, password);
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
                 // new user has been created
                 const createdAt = result.user?.metadata?.creationTime;
-                const user = { email, createdAt: createdAt };
+                const user = {displayName, email, createdAt: createdAt };
                 fetch('http://localhost:5000/user', {
                     method: 'POST',
                     headers: {
@@ -53,6 +54,12 @@ const Register = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             
                 <form  onSubmit={handleRegister}  className="card-body">
+                <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">DisplayName</span>
+                        </label>
+                        <input type="text" name="displayName" placeholder="displayName" className="input input-bordered" required />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
