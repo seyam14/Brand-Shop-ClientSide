@@ -2,7 +2,7 @@
 
 const Contact = () => {
     return (
-        <section id="contact" className="bg-gray-100 py-12">
+        <section id="contact" className="bg-gray-300 py-12">
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-6">Contact with Us</h2>
           <div className="flex flex-col md:flex-row">

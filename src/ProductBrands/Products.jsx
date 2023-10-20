@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 
-const Apple = () => {
-    const allProducts = useLoaderData();
+
+const Products = () => {
+     const allProducts = useLoaderData();
 
   return (
     <div className="m-20">
@@ -15,4 +16,6 @@ const Apple = () => {
     </div>
   );
 };
-export default Apple;
+
+export default Products;
+

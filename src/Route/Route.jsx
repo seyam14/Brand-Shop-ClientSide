@@ -12,8 +12,9 @@ import AddProducts from "../Component/AddProducts/AddProducts";
 import Brands from "../Component/Brands/Brands";
 import Contact from "../Component/Contact/Contact";
 import MyCart from "../Component/MyCart/MyCart";
-import Apple from "../ProductBrands/Apple";
+
 import UpdateProduct from "../Component/UpdateProduct/UpdateProduct";
+import Products from "../ProductBrands/Products";
 
 
 
@@ -59,8 +60,8 @@ const router = createBrowserRouter([
                 element: <MyCart></MyCart>
             },
             {
-                path: '/appleData',
-                element:<Apple></Apple>,
+                path: '/Products',
+                element:<Products></Products>,
                 loader: () => fetch('http://localhost:5000/addProducts')
             },
             {
