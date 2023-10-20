@@ -1,9 +1,42 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import {  Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import "../css/style.css"
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+
+  
+  const [isDarkMode, setIsDarkMode] = useState(getInitialDarkModeValue());
+
+  
+  function getInitialDarkModeValue() {
+    const storedValue = localStorage.getItem("darkMode");
+    return storedValue === "true"; 
+  }
+
+  
+const toggleDarkMode = () => {
+  setIsDarkMode(!isDarkMode);
+  localStorage.setItem("darkMode", !isDarkMode);
+
+ 
+  if (isDarkMode) {
+    document.body.classList.add("dark");
+    document.body.classList.add("text-black"); // Add a class to change text color to black
+  } else {
+    document.body.classList.remove("dark");
+    document.body.classList.remove("text-black"); // Remove the text color class
+  }
+};
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
 
   const handleLogout = () => {
     logout().then((result) => console.log(result));
@@ -34,7 +67,7 @@ const Navbar = () => {
           
     </>
   return (
-    <div className="navbar bg-base-200 md:px-10">
+    <div className={`navbar bg-base-200 md:px-10 top-0 z-10 ${isDarkMode ? "dark" : ""}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -89,6 +122,9 @@ const Navbar = () => {
             <button className="btn">Login</button>
           </Link>
         )}
+        <button onClick={toggleDarkMode}>
+          {isDarkMode ? "Light Mode" : "Dark Mode"}
+        </button>
       </div>
     </div>
   );
