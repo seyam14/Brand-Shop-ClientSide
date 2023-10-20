@@ -1,15 +1,14 @@
+import { useContext } from "react";
 import {  Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    
-    // const {user, logOut} = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext);
 
-    
-    // const handleSignOut = () =>{
-    //     logOut()
-    //     .then()
-    //     .catch()
-    // }
+  const handleLogout = () => {
+    logout().then((result) => console.log(result));
+  };
+
 
     const navLinks = <>
         <li>
@@ -73,25 +72,24 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src={userDefaultPic} />
-        </div>
-      </label> */}
-
-      {/* {
-        user ? 
-        <button onClick={handleSignOut} className="btn bg-base-100 hover:bg-slate-500 hover:text-white">Sign out</button>   
-        :
-        <Link to='/login'>
-            <button className="btn bg-base-100 hover:bg-slate-500 hover:text-white">Login</button>   
-        </Link>
-      } */}
-      
-          <Link to="/login">
+        {user ? (
+          <>
+            <button className="btn btn-primary" onClick={handleLogout}>
+              Logout
+            </button>
+            <div className="gap-1 m-2">
+              <p>{user?.displayName}</p>
+              <p>{user?.email}</p>
+            </div>
+            <div >
+              <img className="w-10 rounded-full" src={user.photoURL} alt="" />
+            </div>
+          </>
+        ) : (
+          <Link to="/Login">
             <button className="btn">Login</button>
           </Link>
-        
+        )}
       </div>
     </div>
   );
