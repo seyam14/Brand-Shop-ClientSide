@@ -17,6 +17,7 @@ const AuthProvider = ({children}) => {
         const [loading, setLoading] = useState(true);
 
     const googleSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider);
       };
     
@@ -24,6 +25,7 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
           console.log("user in the auth state changed", currentUser);
           setUser(currentUser);
+          setLoading(false)
         });
         return () => {
           unSubscribe();
