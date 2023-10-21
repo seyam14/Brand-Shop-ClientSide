@@ -65,9 +65,9 @@ const router = createBrowserRouter([
                 
             },
             {
-                path: '/Products',
+                path: '/Products/:BrandName',
                 element:<Products></Products>,
-                loader: () => fetch('http://localhost:5000/addProducts')
+               
             },
             {
                 path:"/updateProduct/:id",
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
               {
                 path: '/ViewDetails/:id',
                 element:  <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute> ,
-                loader: ({params}) => fetch(`http://localhost:5000/Products/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/addProducts/${params.id}`)
               } ,
         
         ]
