@@ -10,7 +10,7 @@ const Products = () => {
      const [phones, setPhones] = useState([]);
    
      useEffect(() => {
-       fetch(`http://localhost:5000/addProduct/${BrandName}`)
+       fetch(`https://brand-shop-server-side-backend.vercel.app/addProduct/${BrandName}`)
            .then(res => res.json())
            .then(data => {
                console.log(data)
@@ -21,6 +21,7 @@ const Products = () => {
 
   return (
     <div className="m-20">
+    
         <div className="grid grid-cols-1">
         {    
         phones.length > 0 ? (
