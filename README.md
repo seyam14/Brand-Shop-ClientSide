@@ -25,4 +25,9 @@
   - Shop with confidence as our API employs authentication tokens, rate limiting, and other security protocols to protect your data and privacy.
 
 
-
+ ## Technology:
+   - **Front-end:** React
+   - **Frameworks:** Tailwind, DaisyUI
+   - **Backend:**  Node.js,Express.js
+   - **Database:**  MongoDB
+   - **Tools:** Firebase 
