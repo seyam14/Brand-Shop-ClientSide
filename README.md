@@ -1,6 +1,8 @@
 # Brand-Shop
 
-## [client side live link](https://brand-shop-clientside-frontend.web.app)
+## [ live link](https://brand-shop-clientside-frontend.web.app)
+
+## [Server side live link](https://github.com/seyam14/Brand-Shop-ServerSide)
 
 ##  Project Features
 
